@@ -2,7 +2,6 @@ gem "sinatra", "1.3.6"
 require "sinatra"
 require 'open-uri'
 require 'json'
-require 'pry'
 class Movie
   attr_accessor :imdbid, :title, :plot, :actor, :director, :result, :results
   def initialize(imdb)
