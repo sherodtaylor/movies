@@ -2,6 +2,7 @@ gem "sinatra", "1.3.6"
 require "sinatra"
 require 'open-uri'
 require 'json'
+require 'pry'
 class Movie
   attr_accessor :imdbid, :title, :plot, :actor, :director, :result, :results
   def initialize(imdb)
@@ -30,10 +31,11 @@ end
     @page_title += ": Search Results for #{@query}"
     @button = params[:button]
     movie = Movie.new(@query)
-    @result = movie.result
+    @result = movie.results
     if @result.size == 1 || (@result.size > 1 && @button == "lucky")
       redirect "/movies?id=#{@result.first["imdbID"]}"
     else
+      binding.pry
       erb :serp
     end
   end
