@@ -1,2 +1,2 @@
-require './movie.rb'
+require './movies.rb'
 run Sinatra::Application
