@@ -11,9 +11,9 @@ class Movie
     @results = JSON.load(file.read)["Search"] || []
     @title = @result['Title']
     @plot = @result['Plot']
-    @actor = @result['Actors'].split(', ')
-    @director = @result['Director'].split(', ')
     @imdbid = imdb 
+    @actor = @result['Actors']
+    @director = @result['Director']
   end
 end
   before do
@@ -30,7 +30,7 @@ end
     @page_title += ": Search Results for #{@query}"
     @button = params[:button]
     movie = Movie.new(@query)
-    @result = movie.results
+    @result = movie.result
     if @result.size == 1 || (@result.size > 1 && @button == "lucky")
       redirect "/movies?id=#{@result.first["imdbID"]}"
     else
@@ -45,8 +45,8 @@ end
     @result = movie.result
     @title = movie.title
     @plot = movie.plot
-    @actors = movie.actor
-    @directors = movie.director
+    @actors = movie.actor.split(', ')
+    @directors = movie.director.split(', ')
     # @result.reject!{|m| m["Title"] == @result["Title"]}
     @page_title += ": #{@title}"
     erb :movie_details

@@ -1,6 +1,5 @@
 <ol>
   <% @result.each do |r| %>
-  <%= binding.pry %>
     <li><a href="/movies?id=<%= r['imdbID'] %>"><%= r['Title'] %></a>
     <%= r["Year"]%>
     </li>

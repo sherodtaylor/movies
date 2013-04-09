@@ -1,5 +1,5 @@
 <h2>
-  <% if @results.empty? %>
+  <% if @result.empty? %>
     No search results found
   <% else %>
       Search results
@@ -9,6 +9,6 @@
 <%= erb :search_form %>
 <div class='row-fluid'>
   <div class='span7 offset3'>
-    <%= erb :search_results unless @results.empty? %>
+    <%= erb :search_results unless @result.empty? %>
   </div>
 </div>
