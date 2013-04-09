@@ -35,7 +35,7 @@ end
     if @result.size == 1 || (@result.size > 1 && @button == "lucky")
       redirect "/movies?id=#{@result.first["imdbID"]}"
     else
-      binding.pry
+      # binding.pry
       erb :serp
     end
   end
