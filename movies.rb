@@ -1,7 +1,5 @@
-require "pry"
 gem "sinatra", "1.3.6"
 require "sinatra"
-require "sinatra/reloader" 
 require 'open-uri'
 require 'json'
 class Movie
