@@ -1,0 +1,10 @@
+body {
+  margin: 20px 70px;
+  background: rgba(300, 300, 300, 0.95);
+  border-radius: 20px;
+  height: 100%;
+
+}
+h1, h2 {
+  text-align: center;
+}

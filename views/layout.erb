@@ -10,10 +10,17 @@
   <header>
   <h1><%= @app_name %></h1>
 </header>
+<div class='container'>
     <%= yield %>
+  </div>
+    <div class="row">
     <footer>
+      <div class="span4 offset5">
+        </br>
     Copyright &copy; <%= Time.now.year %>  <%= @app_name %>
+      </div>
     </footer>
+  </div>
   </body>
 </html>
 
